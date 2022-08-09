@@ -8,7 +8,7 @@ import salah from '../../public/salah.png'
 
 function PlayerCard({ playerName, playerPoints}) {
   return (
-    <CardStyled variant="outlined" sx={{ maxWidth: '450px' }}>
+    <CardStyled variant="outlined" sx={{ maxWidth: '450px', minWidth: '350px' }}>
       <CardOverflow>
         <AspectRatio objectFit='contain' maxHeight="300px">
           <Image
