@@ -1,0 +1,33 @@
+{
+    "statusCode": 200,
+    "body": {
+        "league_name": "clos ard cup",
+        "gw_number": 2,
+        "mvp": {
+            "id": 1,
+            "player_name" : "Jimbo Jones",
+            "entry_name": "Is this team name?",
+            "transfer_details": {
+                "has_free_transfer": true,
+                "moves": [{
+                    "in": [],
+                    "out": []
+                }]
+            },
+            "contestant_chip_played": ""
+        },
+        "shitebag":{
+            "id": 2,
+            "player_name" : "Tim Tom",
+            "entry_name": "Is this team name?",
+            "transfer_details": {
+                "has_free_transfer": true,
+                "moves": [{
+                    "in": [],
+                    "out": []
+                }]
+            },
+            "contestant_chip_played": ""
+        }
+    }
+}
