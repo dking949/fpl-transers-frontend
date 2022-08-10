@@ -4,9 +4,11 @@ import CardOverflow from '@mui/joy/CardOverflow';
 import Typography from '@mui/joy/Typography';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Image from 'next/image';
-import salah from '../../public/salah.png'
+import salah from '../../public/salah.png';
+import PropTypes from 'prop-types';
+import { Player } from '../../types';
 
-function PlayerCard({ playerName, playerPoints}) {
+function PlayerCard({ playerName, playerPoints }) {
   return (
     <CardStyled variant="outlined" sx={{ maxWidth: '450px', minWidth: '350px' }}>
       <CardOverflow>
@@ -26,5 +28,7 @@ function PlayerCard({ playerName, playerPoints}) {
     </CardStyled>
   )
 }
+
+PlayerCard.propTypes = Player;
 
 export default PlayerCard;

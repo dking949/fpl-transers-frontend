@@ -2,6 +2,7 @@ import React from 'react'
 import PlayerCard from '../PlayerCard/PlayerCard';
 import { ContainerStyled } from './styled';
 import { FaArrowRight } from 'react-icons/fa';
+import { Transfer } from '../../types';
 
 function ContestantTransfer({
   playerOut,
@@ -16,4 +17,6 @@ function ContestantTransfer({
   )
 }
 
-export default ContestantTransfer
+ContestantTransfer.propTypes = Transfer;
+
+export default ContestantTransfer;
