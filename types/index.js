@@ -1,8 +1,8 @@
 import { shape, number, string } from 'prop-types';
 
 export const Player = shape({
-  playerId: number.isRequired,
-  playerName: string.isRequired,
+  playerId: number, // TODO: Weird behaviour with isRequired that needs sorting
+  playerName: string,
   playerGameweekPoints: number,
 });
 

@@ -8,6 +8,8 @@ function ContestantTransfer({
   playerOut,
   playerIn,
 }) {
+
+  console.log({playerOut});
   return (
    <ContainerStyled>
       <PlayerCard {...playerOut}></PlayerCard>

@@ -8,7 +8,7 @@ import salah from '../../public/salah.png';
 import PropTypes from 'prop-types';
 import { Player } from '../../types';
 
-function PlayerCard({ playerName, playerPoints }) {
+function PlayerCard({ playerName, playerGameweekPoints }) {
   return (
     <CardStyled variant="outlined" sx={{ maxWidth: '450px', minWidth: '350px' }}>
       <CardOverflow>
@@ -23,7 +23,7 @@ function PlayerCard({ playerName, playerPoints }) {
         {playerName}
       </Typography>
       <Typography level="body2" sx={{ mt: 0.5, mb: 2 }}>
-        Points: {playerPoints}
+        Points: {playerGameweekPoints}
       </Typography>
     </CardStyled>
   )
