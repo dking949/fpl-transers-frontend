@@ -10,7 +10,8 @@ import { Player } from '../../types';
 
 function PlayerCard({ playerName, playerGameweekPoints }) {
   return (
-    <CardStyled variant="outlined" sx={{ maxWidth: '450px', minWidth: '350px' }}>
+    // TODO: Need a better solution than hardcoding the card widths
+    <CardStyled variant="outlined" sx={{ maxWidth: '450px', minWidth: '400px' }}>
       <CardOverflow>
         <AspectRatio objectFit='contain' maxHeight="300px">
           <Image

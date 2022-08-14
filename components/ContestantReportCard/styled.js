@@ -8,4 +8,6 @@ export const ContainerStyled = styled.div`
 
 export const TransferListStyled = styled.li`
   list-style-type:none;
+  display: inline-block;
+  text-align: left;
 `;
