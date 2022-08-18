@@ -4,18 +4,19 @@ import CardOverflow from '@mui/joy/CardOverflow';
 import Typography from '@mui/joy/Typography';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Image from 'next/image';
-import salah from '../../public/salah.png';
 import { CardStyled } from './styled';
 import { Player } from '../../types';
 
-function PlayerCard({ player_name, points }) {
+function PlayerCard({ player_name, points, photo_url }) {
   return (
     // TODO: Need a better solution than hardcoding the card widths
     <CardStyled variant="outlined" sx={{ maxWidth: '450px', minWidth: '400px' }}>
       <CardOverflow>
         <AspectRatio objectFit="contain" maxHeight="300px">
           <Image
-            src={salah}
+            src={photo_url}
+            width={300}
+            height={300}
             alt="Player Pic"
           />
         </AspectRatio>

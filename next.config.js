@@ -5,6 +5,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-}
+  images: {
+    domains: ['resources.premierleague.com'],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

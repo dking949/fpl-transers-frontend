@@ -13,12 +13,12 @@
           {
             "in": {
               "name": "Trippier",
-              "photo_url": "https:resources.premierleague.compremierleaguephotosplayers110x140p77794.png",
+              "photo_url": "https:resources.premierleague.com/premierleague/photos/players/110x140/p77794.png",
               "points": 7
             },
             "out": {
               "name": "Perišić",
-              "photo_url": "https:resources.premierleague.compremierleaguephotosplayers110x140p45034.png",
+              "photo_url": "https:resources.premierleague.com/premierleague/photos/players/110x140/p45034.png",
               "points": 4
             }
           }
@@ -36,12 +36,12 @@
           {
             "in": {
               "name": "Haaland",
-              "photo_url": "https:resources.premierleague.compremierleaguephotosplayers110x140p223094.png",
+              "photo_url": "https:resources.premierleague.com/premierleague/photos/players/110x140/p223094.png",
               "points": 5
             },
             "out": {
               "name": "Kane",
-              "photo_url": "https:resources.premierleague.compremierleaguephotosplayers110x140p78830.png",
+              "photo_url": "https:resources.premierleague.com/premierleague/photos/players/110x140/p78830.png",
               "points": 8
             }
           }

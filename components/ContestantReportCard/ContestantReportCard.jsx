@@ -46,7 +46,7 @@ function ContestantReportCard({
 
   return (
     <ContainerStyled>
-      <Card variant="outlined" sx={{ minWidth: '320px' }}>
+      <Card variant="outlined" sx={{ minWidth: '320px', maxWidth: '1000px', textAlign: 'center' }}>
         <h1>{contestantTitle}</h1>
         <h2>{contestantName}</h2>
         <div>

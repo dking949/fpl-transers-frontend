@@ -10,9 +10,9 @@ function ContestantTransfer({
 }) {
   return (
     <ContainerStyled>
-      <PlayerCard player_name={playerOut.name} points={playerOut.points} />
+      <PlayerCard player_name={playerOut.name} points={playerOut.points} photo_url={playerOut.photo_url} />
       <FaArrowRight size="5em" />
-      <PlayerCard player_name={playerIn.name} points={playerIn.points} />
+      <PlayerCard player_name={playerIn.name} points={playerIn.points} photo_url={playerIn.photo_url} />
     </ContainerStyled>
   );
 }
