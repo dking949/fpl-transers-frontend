@@ -1,12 +1,27 @@
-import { shape, number, string } from 'prop-types';
+import {
+  shape, number, string, bool, arrayOf,
+} from 'prop-types';
 
 export const Player = shape({
-  playerId: number,
-  playerName: string.isRequired,
-  playerGameweekPoints: number.isRequired,
+  name: string.isRequired,
+  points: number.isRequired,
+  photo_url: string.isRequired,
 });
 
 export const Transfer = shape({
-  playerOut: Player.isRequired,
-  playerIn: Player.isRequired,
+  out: Player.isRequired,
+  in: Player.isRequired,
+});
+
+const TransferDetail = shape({
+  has_free_transfer: bool.isRequired,
+  moves: arrayOf(Transfer),
+});
+
+export const PlayerGameweekSummary = shape({
+  id: number.isRequired,
+  name: string.isRequired,
+  team_name: string.isRequired,
+  transfer_details: arrayOf(TransferDetail).isRequired,
+  chip_played: string,
 });

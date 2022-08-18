@@ -1,69 +1,29 @@
-import styles from '../styles/Home.module.css'
+/* eslint-disable react/jsx-filename-extension */
+import { useEffect } from 'react';
 import { CssVarsProvider } from '@mui/joy/styles';
-import PlayerCard from '../components/PlayerCard/PlayerCard'
-import ContestantTransfer from '../components/ContestantTransfer/ContestantTransfer';
+import styles from '../styles/Home.module.css';
 import GameweekSummary from '../components/GameweekSummary/GameweekSummary';
+import apiResp from '../public/actualApiResponse.json';
 
-export default function Home() {
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const API_ENDPOINT = 'https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/';
 
-  const dummyMVP = {
-    "id": 1,
-    "player_name" : "Jimbo Jones",
-    "entry_name": "Is this team name?",
-    "transfer_details": {
-        "has_free_transfer": true,
-        "moves": [{
-          "in": {
-            playerId: 44,
-            playerName: "Darwin Nunez",
-            playerGameweekPoints: 13,
-          },
-          "out": {
-            playerId: 1,
-            playerName: "Harry Kane",
-            playerGameweekPoints: 6,
-          }
-        }]
-    },
-    "contestant_chip_played": ""
-  }
+export async function getStaticProps(context) {
+  // const { data, error } = await fetch(API_ENDPOINT);
+  const fplData = apiResp.body;
+  return {
+    props: {
+      fplData,
+    }, // will be passed to the page component as props
+  };
+}
 
-  const dummyShitebag = {
-    "id": 2,
-    "player_name" : "Moe Syzlack",
-    "entry_name": "Is this team name?",
-    "transfer_details": {
-        "has_free_transfer": true,
-        "moves": [{
-            "in": {
-              playerId: 77,
-              playerName: "Eddie Nketiah",
-              playerGameweekPoints: 2,
-            },
-            "out": {
-              playerId: 5,
-              playerName: "Erling Haaland",
-              playerGameweekPoints: 12,
-            }
-        }]
-    },
-    "contestant_chip_played": ""
-  }
-
+export default function Home({ fplData }) {
   return (
     <div className={styles.container}>
       <CssVarsProvider>
-        {/* <PlayerCard playerName={'Mo Salah'} playerPoints={20} /> */}
-        {/* <ContestantTransfer playerIn={{
-          playerName: 'James Maddison',
-          playerPoints: 2
-        }} playerOut={{
-          playerName: 'Mason Mount',
-          playerPoints: 6
-        }}/> */}
-
-        <GameweekSummary mvp={dummyMVP} shitebag={dummyShitebag} />
+        <GameweekSummary mvp={fplData.mvp} shitebag={fplData.shitebag} />
       </CssVarsProvider>
     </div>
-  )
+  );
 }
