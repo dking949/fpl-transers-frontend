@@ -45,7 +45,8 @@
               "points": 8
             }
           }
-        ]
+        ],
+        "totalTransferCost": 0
       },
       "chip_played": null
     }

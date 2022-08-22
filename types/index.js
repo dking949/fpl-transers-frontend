@@ -16,6 +16,7 @@ export const Transfer = shape({
 const TransferDetail = shape({
   has_free_transfer: bool.isRequired,
   moves: arrayOf(Transfer),
+  totalTransferCost: number.isRequired,
 });
 
 export const PlayerGameweekSummary = shape({

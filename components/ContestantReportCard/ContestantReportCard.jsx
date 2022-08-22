@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '@mui/joy/Card';
 import PropTypes from 'prop-types';
-import { ContainerStyled, TransferListStyled } from './styled';
+import { ContainerStyled, TransferListStyled, TransferListItemStyled } from './styled';
 import { Transfer } from '../../types';
 import ContestantTransfer from '../ContestantTransfer/ContestantTransfer';
 
@@ -10,6 +10,7 @@ function ContestantReportCard({
   contestantName,
   contestantTitle, // MVP/Loser etc,
   transfers,
+  transferCost,
 }) {
   // TODO: Could I create a custom hook here???
   const [renderedTransfers, setRenderedTransfers] = useState([]);
@@ -25,7 +26,8 @@ function ContestantReportCard({
     const totalPlayerOutPoints = contestantTransfers.reduce((prevTransfer, nextTransfer) => prevTransfer + nextTransfer.out.points, 0);
     const totalPlayerInPoints = contestantTransfers.reduce((prevTransfer, nextTransfer) => prevTransfer + nextTransfer.in.points, 0);
 
-    const netChange = totalPlayerInPoints - totalPlayerOutPoints;
+    let netChange = totalPlayerInPoints - totalPlayerOutPoints;
+    netChange -= transferCost;
 
     if (Math.sign(netChange) === 1) {
       setNetPointsChange(`+${netChange}`);
@@ -36,9 +38,9 @@ function ContestantReportCard({
 
   useEffect(() => {
     const transferListItems = transfers.map((transfer, idx) => (
-      <li key={idx}>
+      <TransferListItemStyled key={idx}>
         <ContestantTransfer playerOut={transfer.out} playerIn={transfer.in} />
-      </li>
+      </TransferListItemStyled>
     ));
     setRenderedTransfers(transferListItems);
     calculateNetPointsChange(transfers);
@@ -46,7 +48,7 @@ function ContestantReportCard({
 
   return (
     <ContainerStyled>
-      <Card variant="outlined" sx={{ minWidth: '320px', maxWidth: '1000px', textAlign: 'center' }}>
+      <Card variant="outlined" sx={{ minWidth: '350px', maxWidth: 'fit-content', margin: 'auto' }}>
         <h1>{contestantTitle}</h1>
         <h2>{contestantName}</h2>
         <div>
@@ -67,6 +69,7 @@ ContestantReportCard.propTypes = {
   contestantName: PropTypes.string.isRequired,
   contestantTitle: PropTypes.string.isRequired,
   transfers: PropTypes.arrayOf(Transfer).isRequired,
+  transferCost: PropTypes.number.isRequired,
 };
 
 export default ContestantReportCard;
