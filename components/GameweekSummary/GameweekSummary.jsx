@@ -1,6 +1,6 @@
 import React from 'react';
 import ContestantReportCard from '../ContestantReportCard/ContestantReportCard';
-import { ContainerStyled } from './styled';
+import ContainerStyled from './styled';
 
 function GameweekSummary({ mvp, shitebag }) {
   return (

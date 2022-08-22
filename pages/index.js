@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-filename-extension */
-import { useEffect } from 'react';
 import { CssVarsProvider } from '@mui/joy/styles';
 import GameweekSummary from '../components/GameweekSummary/GameweekSummary';
 

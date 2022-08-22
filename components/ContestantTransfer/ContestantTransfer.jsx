@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowRight, FaArrowDown } from 'react-icons/fa';
 import PlayerCard from '../PlayerCard/PlayerCard';
-import { ContainerStyled } from './styled';
+import ContainerStyled from './styled';
 import { Transfer } from '../../types';
 
 function ContestantTransfer({
@@ -11,6 +11,7 @@ function ContestantTransfer({
   const [arrow, setArrow] = useState(null);
 
   const getArrowIcon = () => {
+    // eslint-disable-next-line no-restricted-globals
     const screenWidth = screen.width;
 
     if (screenWidth < 600) {

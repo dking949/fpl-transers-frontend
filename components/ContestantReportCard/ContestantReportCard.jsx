@@ -38,6 +38,7 @@ function ContestantReportCard({
 
   useEffect(() => {
     const transferListItems = transfers.map((transfer, idx) => (
+      // eslint-disable-next-line react/no-array-index-key
       <TransferListItemStyled key={idx}>
         <ContestantTransfer playerOut={transfer.out} playerIn={transfer.in} />
       </TransferListItemStyled>

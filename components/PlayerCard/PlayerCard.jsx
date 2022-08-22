@@ -4,7 +4,7 @@ import CardOverflow from '@mui/joy/CardOverflow';
 import Typography from '@mui/joy/Typography';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Image from 'next/image';
-import { CardStyled } from './styled';
+import CardStyled from './styled';
 import { Player } from '../../types';
 
 function PlayerCard({ player_name, points, photo_url }) {
