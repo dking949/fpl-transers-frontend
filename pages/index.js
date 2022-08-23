@@ -11,7 +11,8 @@ export async function getStaticProps() {
   return {
     props: {
       fplData,
-    }, // will be passed to the page component as props
+    },
+    revalidate: 3600, // 1 hour
   };
 }
 
