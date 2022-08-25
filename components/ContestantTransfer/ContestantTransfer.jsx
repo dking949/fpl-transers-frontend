@@ -11,8 +11,7 @@ function ContestantTransfer({
   const [arrow, setArrow] = useState(null);
 
   const getArrowIcon = () => {
-    // eslint-disable-next-line no-restricted-globals
-    const screenWidth = screen.width;
+    const screenWidth = window.screen.width;
 
     if (screenWidth < 600) {
       return <FaArrowDown size="5em" />;

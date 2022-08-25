@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import { CssVarsProvider } from '@mui/joy/styles';
+import Head from 'next/head';
 import GameweekSummary from '../components/GameweekSummary/GameweekSummary';
 
 const API_ENDPOINT = 'https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/';
@@ -19,6 +20,10 @@ export async function getStaticProps() {
 export default function Home({ fplData }) {
   return (
     <div>
+      <Head>
+        <title>FPL Transfers</title>
+        <meta name="fpl transfers" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <CssVarsProvider>
         <GameweekSummary mvp={fplData.mvp} shitebag={fplData.shitebag} />
       </CssVarsProvider>
