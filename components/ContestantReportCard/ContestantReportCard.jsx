@@ -1,51 +1,45 @@
 /* eslint-disable max-len */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Card from '@mui/joy/Card';
 import PropTypes from 'prop-types';
 import { ContainerStyled, TransferListStyled, TransferListItemStyled } from './styled';
 import { Transfer } from '../../types';
 import ContestantTransfer from '../ContestantTransfer/ContestantTransfer';
 
+/**
+   * Given an array of transfers made, function will calculate the net points chnage
+   * from those transfers. By wrapping it in useCallback, the hook will return the same
+   * function instance between iterations
+   *
+   * @param {Transfer[]} contestantTransfers - The array of transfers made
+   */
+const calculateNetPointsChange = (contestantTransfers, transferCost) => {
+  const totalPlayerOutPoints = contestantTransfers.reduce((prevTransfer, nextTransfer) => prevTransfer + nextTransfer.out.points, 0);
+  const totalPlayerInPoints = contestantTransfers.reduce((prevTransfer, nextTransfer) => prevTransfer + nextTransfer.in.points, 0);
+
+  let netChange = totalPlayerInPoints - totalPlayerOutPoints;
+  netChange -= transferCost;
+
+  if (Math.sign(netChange) === 1) {
+    return `+${netChange}`;
+  }
+  return `${netChange}`;
+};
 function ContestantReportCard({
   contestantName,
   contestantTitle, // MVP/Loser etc,
   transfers,
   transferCost,
 }) {
-  // TODO: Could I create a custom hook here???
-  const [renderedTransfers, setRenderedTransfers] = useState([]);
-  const [netPointsChange, setNetPointsChange] = useState('');
-
-  /**
-   * Given an array of transfers made, function will calculate the net points chnage
-   * from those transfers
-   *
-   * @param {Transfer[]} contestantTransfers - The array of transfers made
-   */
-  const calculateNetPointsChange = (contestantTransfers) => {
-    const totalPlayerOutPoints = contestantTransfers.reduce((prevTransfer, nextTransfer) => prevTransfer + nextTransfer.out.points, 0);
-    const totalPlayerInPoints = contestantTransfers.reduce((prevTransfer, nextTransfer) => prevTransfer + nextTransfer.in.points, 0);
-
-    let netChange = totalPlayerInPoints - totalPlayerOutPoints;
-    netChange -= transferCost;
-
-    if (Math.sign(netChange) === 1) {
-      setNetPointsChange(`+${netChange}`);
-    } else {
-      setNetPointsChange(`${netChange}`);
-    }
-  };
-
-  useEffect(() => {
-    const transferListItems = transfers.map((transfer, idx) => (
-      // eslint-disable-next-line react/no-array-index-key
-      <TransferListItemStyled key={idx}>
-        <ContestantTransfer playerOut={transfer.out} playerIn={transfer.in} />
-      </TransferListItemStyled>
-    ));
-    setRenderedTransfers(transferListItems);
-    calculateNetPointsChange(transfers);
-  }, []);
+  // State variables
+  const renderedTransfers = useState(transfers.map((transfer, idx) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <TransferListItemStyled key={idx}>
+      <ContestantTransfer playerOut={transfer.out} playerIn={transfer.in} />
+    </TransferListItemStyled>
+  )));
+  // eslint-disable-next-line no-use-before-define
+  const netPointsChange = useState(() => calculateNetPointsChange(transfers, transferCost));
 
   return (
     <ContainerStyled>
