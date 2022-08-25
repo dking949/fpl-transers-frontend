@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Card from '@mui/joy/Card';
 import PropTypes from 'prop-types';
+import Typography from '@mui/joy/Typography';
 import { ContainerStyled, TransferListStyled, TransferListItemStyled } from './styled';
 import { Transfer } from '../../types';
 import ContestantTransfer from '../ContestantTransfer/ContestantTransfer';
@@ -42,9 +43,18 @@ function ContestantReportCard({
 
   return (
     <ContainerStyled>
-      <Card variant="outlined" sx={{ minWidth: '350px', maxWidth: 'fit-content', margin: 'auto' }}>
-        <h1>{contestantTitle}</h1>
-        <h2>{contestantName}</h2>
+      <Card
+        variant="outlined"
+        sx={{
+          minWidth: '350px', width: 'fit-content', maxWidth: '600px', margin: 'auto',
+        }}
+      >
+        <Typography level="h1" sx={{ fontSize: '2em', mt: 2 }}>
+          {contestantTitle}
+        </Typography>
+        <Typography level="h2" sx={{ fontSize: '1.5em', mt: 2 }}>
+          {contestantName}
+        </Typography>
         <div>
           <TransferListStyled>
             {renderedTransfers}

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContainerStyled = styled.div`
-  display: flex:
+  display: flex;
   flex-direction: column;
   text-align: center;
 `;

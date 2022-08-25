@@ -1,0 +1,36 @@
+[
+    {
+        "playerId": 599,
+        "playerName": "Haaland",
+        "photoUrl": "",
+        "fixture": "BOU(H)",
+        "captainedBy": [
+            {
+                "id": "4",
+                "name": "Darren"
+            },
+            {
+                "id": "44",
+                "name": "James"
+            }
+        ],
+        "captainedByPercent": "60"
+    },
+    {
+        "playerId": 592,
+        "playerName": "James",
+        "photoUrl": "",
+        "fixture": "NEW(H)",
+        "captainedBy": [
+            {
+                "id": "4",
+                "name": "darren"
+            },
+            {
+                "id": "44",
+                "name": "James"
+            }
+        ],
+        "captainedByPercent": "40"
+    }
+]

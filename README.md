@@ -34,8 +34,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## TODO
-- Multiple useEffect & useState hooks could be moved to custom hooks
-- When viewed on mobile chrome/safari there is a weird black outline on card
 - More Color and Styling
-- Vercel analytics reported cumulative layout shift issues. Maybe because no placeholder div before transfer ul rendered? Shouldn't SSR solve this?
-- Update lint rules in order to remove multiple manual overrides
+- More features
+- Rename variables in API
