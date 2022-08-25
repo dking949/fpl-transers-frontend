@@ -2,9 +2,7 @@
 import { CssVarsProvider } from '@mui/joy/styles';
 import Head from 'next/head';
 import styled from 'styled-components';
-import CaptaincyWidget from '../components/CaptaincyWidget/CaptaincyWidget';
 import GameweekSummary from '../components/GameweekSummary/GameweekSummary';
-import captaincyApiResponse from '../public/captaincyApiResponse.json';
 
 const API_ENDPOINT = 'https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/';
 
