@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/joy/Card';
 import PropTypes from 'prop-types';
 import { ContainerStyled, TransferListStyled, TransferListItemStyled } from './styled';
@@ -8,8 +8,7 @@ import ContestantTransfer from '../ContestantTransfer/ContestantTransfer';
 
 /**
    * Given an array of transfers made, function will calculate the net points chnage
-   * from those transfers. By wrapping it in useCallback, the hook will return the same
-   * function instance between iterations
+   * from those transfers.
    *
    * @param {Transfer[]} contestantTransfers - The array of transfers made
    */
@@ -32,12 +31,12 @@ function ContestantReportCard({
   transferCost,
 }) {
   // State variables
-  const renderedTransfers = useState(transfers.map((transfer, idx) => (
+  const renderedTransfers = useState([transfers.map((transfer, idx) => (
     // eslint-disable-next-line react/no-array-index-key
     <TransferListItemStyled key={idx}>
       <ContestantTransfer playerOut={transfer.out} playerIn={transfer.in} />
     </TransferListItemStyled>
-  )));
+  ))]);
   // eslint-disable-next-line no-use-before-define
   const netPointsChange = useState(() => calculateNetPointsChange(transfers, transferCost));
 
