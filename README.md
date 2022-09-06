@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Description
+This is the frontend for a personal project I have been working on. It is related to https://github.com/dking949/fpl-transfers
+Please see that project for a full description
 
 ## Getting Started
 
@@ -33,7 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## TODO
-- More Color and Styling
-- More features
-- Rename variables in API
+## Roadmap
+- Add Tailwind CSS (maybe)
+- Captaincy widget. Would show all captaincy picks made by players that week.
+- Time to deadline timer Widget.
