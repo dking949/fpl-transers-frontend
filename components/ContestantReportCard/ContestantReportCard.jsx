@@ -25,6 +25,7 @@ const calculateNetPointsChange = (contestantTransfers, transferCost) => {
   }
   return `${netChange}`;
 };
+
 function ContestantReportCard({
   contestantName,
   contestantTitle, // MVP/Loser etc,
@@ -56,7 +57,7 @@ function ContestantReportCard({
           {contestantName}
         </Typography>
         <div>
-          <TransferListStyled>
+          <TransferListStyled id="transfer-list">
             {renderedTransfers}
           </TransferListStyled>
         </div>

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerCard matches snapshot 1`] = `
+<div>
+  <div
+    class="JoyCard-root JoyCard-variantOutlined JoyCard-colorNeutral JoyCard-sizeMd styled__CardStyled-sc-mdm4t5-0 gSCUMQ css-1hewnn1-JoyCard-root"
+  >
+    <div
+      class="JoyCardOverflow-root JoyCardOverflow-variantPlain JoyCardOverflow-colorNeutral css-17s582v-JoyCardOverflow-root"
+      data-first-child=""
+    >
+      <div
+        class="JoyAspectRatio-root css-otcn9f-JoyAspectRatio-root"
+      >
+        <div
+          class="JoyAspectRatio-content JoyAspectRatio-variantSoft JoyAspectRatio-colorNeutral css-hfdg0j-JoyAspectRatio-content"
+        >
+          <span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27300%27%20height=%27300%27/%3e"
+                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+              />
+            </span>
+            <img
+              alt="Player Pic"
+              data-first-child=""
+              data-nimg="intrinsic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+      </div>
+    </div>
+    <h2
+      class="JoyTypography-root JoyTypography-h2 css-1fr557m-JoyTypography-root"
+    >
+      John
+    </h2>
+    <p
+      class="JoyTypography-root JoyTypography-body2 css-1muanya-JoyTypography-root"
+      data-last-child=""
+    >
+      Points:
+       
+      10
+    </p>
+  </div>
+</div>
+`;

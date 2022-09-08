@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContestantReportCard Matches snapshot 1`] = `
+<div>
+  <div
+    class="styled__ContainerStyled-sc-ubxpey-0 jYpWSm"
+  >
+    <div
+      class="JoyCard-root JoyCard-variantOutlined JoyCard-colorNeutral JoyCard-sizeMd css-d881ni-JoyCard-root"
+    >
+      <h1
+        class="JoyTypography-root JoyTypography-h1 css-scr9wm-JoyTypography-root"
+        data-first-child=""
+      >
+        MVP
+      </h1>
+      <h2
+        class="JoyTypography-root JoyTypography-h2 css-5beko8-JoyTypography-root"
+      >
+        John
+      </h2>
+      <div>
+        <ul
+          class="styled__TransferListStyled-sc-ubxpey-1 dnisFD"
+          id="transfer-list"
+        >
+          <li
+            class="styled__TransferListItemStyled-sc-ubxpey-2 igaKFf"
+          >
+            <div
+              class="styled__ContainerStyled-sc-1i4c7k1-0 hGzrZf"
+            >
+              <div
+                class="JoyCard-root JoyCard-variantOutlined JoyCard-colorNeutral JoyCard-sizeMd styled__CardStyled-sc-mdm4t5-0 gSCUMQ css-1hewnn1-JoyCard-root"
+              >
+                <div
+                  class="JoyCardOverflow-root JoyCardOverflow-variantPlain JoyCardOverflow-colorNeutral css-17s582v-JoyCardOverflow-root"
+                  data-first-child=""
+                >
+                  <div
+                    class="JoyAspectRatio-root css-otcn9f-JoyAspectRatio-root"
+                  >
+                    <div
+                      class="JoyAspectRatio-content JoyAspectRatio-variantSoft JoyAspectRatio-colorNeutral css-hfdg0j-JoyAspectRatio-content"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                      >
+                        <span
+                          style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                        >
+                          <img
+                            alt=""
+                            aria-hidden="true"
+                            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27300%27%20height=%27300%27/%3e"
+                            style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                          />
+                        </span>
+                        <img
+                          alt="Player Pic"
+                          data-first-child=""
+                          data-nimg="intrinsic"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                        />
+                        <noscript />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <h2
+                  class="JoyTypography-root JoyTypography-h2 css-1fr557m-JoyTypography-root"
+                >
+                  Kane
+                </h2>
+                <p
+                  class="JoyTypography-root JoyTypography-body2 css-1muanya-JoyTypography-root"
+                  data-last-child=""
+                >
+                  Points:
+                   
+                  8
+                </p>
+              </div>
+              <svg
+                fill="currentColor"
+                height="5em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                width="5em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
+                />
+              </svg>
+              <div
+                class="JoyCard-root JoyCard-variantOutlined JoyCard-colorNeutral JoyCard-sizeMd styled__CardStyled-sc-mdm4t5-0 gSCUMQ css-1hewnn1-JoyCard-root"
+              >
+                <div
+                  class="JoyCardOverflow-root JoyCardOverflow-variantPlain JoyCardOverflow-colorNeutral css-17s582v-JoyCardOverflow-root"
+                  data-first-child=""
+                >
+                  <div
+                    class="JoyAspectRatio-root css-otcn9f-JoyAspectRatio-root"
+                  >
+                    <div
+                      class="JoyAspectRatio-content JoyAspectRatio-variantSoft JoyAspectRatio-colorNeutral css-hfdg0j-JoyAspectRatio-content"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                      >
+                        <span
+                          style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                        >
+                          <img
+                            alt=""
+                            aria-hidden="true"
+                            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27300%27%20height=%27300%27/%3e"
+                            style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                          />
+                        </span>
+                        <img
+                          alt="Player Pic"
+                          data-first-child=""
+                          data-nimg="intrinsic"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                        />
+                        <noscript />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <h2
+                  class="JoyTypography-root JoyTypography-h2 css-1fr557m-JoyTypography-root"
+                >
+                  Haaland
+                </h2>
+                <p
+                  class="JoyTypography-root JoyTypography-body2 css-1muanya-JoyTypography-root"
+                  data-last-child=""
+                >
+                  Points:
+                   
+                  5
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <h2
+        data-last-child=""
+      >
+        Net Differential:
+        -3
+      </h2>
+    </div>
+  </div>
+</div>
+`;
