@@ -20,7 +20,7 @@ function CaptaincyWidget({ players }) {
     <Card
       variant="outlined"
       sx={{
-        minWidth: 'fit-content', height: 'fit-content',
+        minWidth: '350px', height: 'fit-content', maxWidth: 'fit-content', margin: 'auto',
       }}
     >
       <Typography level="h1" sx={{ fontSize: '2em', mt: 2 }}>

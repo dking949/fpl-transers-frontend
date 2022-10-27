@@ -9,6 +9,11 @@ export const CardStyled = styled(Card)`
   align-items: center;
   text-align: center;
   min-width: fit-content;
+  width: 100%;
+
+  @media only screen and (max-width: 900px) {
+    display: flex;
+  }
 `;
 
 export const UnorderedListStyled = styled.ul`
