@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Image from 'next/image';
-import salah from '../../public/salah.png';
-import { CardStyled } from './styled';
+import { CardStyled, UnorderedListStyled } from './styled';
 
 function CaptaincyRow({
-  playerName, captainedBy, captainedByPercent, fixture,
+  playerName,
+  photoUrl,
+  captainedBy,
+  /* captainedByPercent */
+  fixture,
 }) {
   const captainedByList = useState(
     // eslint-disable-next-line react/jsx-key
@@ -16,20 +19,20 @@ function CaptaincyRow({
     <CardStyled>
       <AspectRatio ratio={1} objectFit="cover">
         <Image
-          src={salah}
+          src={photoUrl}
           width={80}
           height={120}
           alt="Player Pic"
         />
       </AspectRatio>
       <div>{playerName}</div>
-      <div>
+      <UnorderedListStyled>
         {captainedByList}
-      </div>
-      <div>
+      </UnorderedListStyled>
+      {/* <div>
         {captainedByPercent}
         %
-      </div>
+      </div> */}
       <div>
         {fixture}
       </div>

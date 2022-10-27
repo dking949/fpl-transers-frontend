@@ -3,16 +3,17 @@ import { CssVarsProvider } from '@mui/joy/styles';
 import Head from 'next/head';
 import styled from 'styled-components';
 import GameweekSummary from '../components/GameweekSummary/GameweekSummary';
-import captaincyApiResponse from '../public/captaincyApiResponse.json';
 import CaptaincyWidget from '../components/CaptaincyWidget/CaptaincyWidget';
 
 const API_ENDPOINT = 'https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/';
 
 const ContainerStyled = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin: 50px;
     gap: 5em;
+    max-width: 100vw;
   `;
 
 export async function getStaticProps() {
@@ -37,7 +38,7 @@ export default function Home({ fplData }) {
       <CssVarsProvider>
         <ContainerStyled>
           <GameweekSummary mvp={fplData.mvp} woodenSpoon={fplData.shitebag} />
-          <CaptaincyWidget players={captaincyApiResponse} />
+          <CaptaincyWidget players={fplData.captaincy} />
         </ContainerStyled>
       </CssVarsProvider>
     </div>

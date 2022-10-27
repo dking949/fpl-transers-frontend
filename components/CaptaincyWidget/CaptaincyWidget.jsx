@@ -8,9 +8,10 @@ function CaptaincyWidget({ players }) {
   const captainedPlayers = useState([players.map((plyr) => (
     // eslint-disable-next-line react/jsx-key
     <CaptaincyRow
-      playerName={plyr.playerName}
+      playerName={plyr.name}
+      photoUrl={plyr.photo_url}
       captainedBy={plyr.captainedBy}
-      captainedByPercent={plyr.captainedByPercent}
+      // captainedByPercent={plyr.captainedByPercent}
       fixture={plyr.fixture}
     />
   ))]);
