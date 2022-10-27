@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import Card from '@mui/joy/Card';
 import Typography from '@mui/joy/Typography';
 import CaptaincyRow from '../CaptaincyRow/CaptaincyRow';
-import ContainerStyled from './styled';
+import { ContainerStyled, CardStyled } from './styled';
 
 function CaptaincyWidget({ players }) {
   const captainedPlayers = useState([players.map((plyr) => (
@@ -17,11 +16,8 @@ function CaptaincyWidget({ players }) {
   ))]);
 
   return (
-    <Card
+    <CardStyled
       variant="outlined"
-      sx={{
-        minWidth: '350px', height: 'fit-content', maxWidth: 'fit-content', margin: 'auto',
-      }}
     >
       <Typography level="h1" sx={{ fontSize: '2em', mt: 2 }}>
         Captaincy
@@ -29,7 +25,7 @@ function CaptaincyWidget({ players }) {
       <ContainerStyled>
         {captainedPlayers}
       </ContainerStyled>
-    </Card>
+    </CardStyled>
   );
 }
 
