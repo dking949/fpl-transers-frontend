@@ -4,7 +4,7 @@ import { BsInfoCircle } from 'react-icons/bs';
 import Tooltip from '@mui/joy/Tooltip';
 import IconButton from '@mui/joy/IconButton';
 import DifferentialPlayerCard from './DifferentialPlayerCard';
-import { TitleContainerStyled } from './styled';
+import TitleContainerStyled from './styled';
 
 const DIFFERENTIAL_DEFINITION = (
   <div>

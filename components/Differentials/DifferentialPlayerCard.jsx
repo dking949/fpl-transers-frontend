@@ -1,13 +1,10 @@
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import PlayerCard from '../PlayerCard/PlayerCard';
-import { Player, Contestant } from '../../types';
+// import { Player, Contestant } from '../../types';
 
-function DifferentialPlayerCard({
-  player,
-  ownedBy,
-}) {
+function DifferentialPlayerCard() {
   // const mappedOwnedByList = ownedBy.map((contestant) => <li>{contestant.name}</li>);
 
   /*
@@ -36,10 +33,9 @@ player.photo_url
   );
 }
 
-DifferentialPlayerCard.propTypes = {
-  player: Player.isRequired,
-  ownedBy: PropTypes.arrayOf(Contestant).isRequired,
-  transferCost: PropTypes.number.isRequired,
-};
+// DifferentialPlayerCard.propTypes = {
+//   player: Player.isRequired,
+//   ownedBy: PropTypes.arrayOf(Contestant).isRequired,
+// };
 
 export default DifferentialPlayerCard;
