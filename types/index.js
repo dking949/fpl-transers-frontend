@@ -26,3 +26,8 @@ export const PlayerGameweekSummary = shape({
   transfer_details: arrayOf(TransferDetail).isRequired,
   chip_played: string,
 });
+
+export const Contestant = shape({
+  id: number.isRequired,
+  name: string.isRequired,
+});

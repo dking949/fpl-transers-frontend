@@ -3,7 +3,8 @@ import { CssVarsProvider } from '@mui/joy/styles';
 import Head from 'next/head';
 import styled from 'styled-components';
 import GameweekSummary from '../components/GameweekSummary/GameweekSummary';
-import CaptaincyWidget from '../components/CaptaincyWidget/CaptaincyWidget';
+// import CaptaincyWidget from '../components/CaptaincyWidget/CaptaincyWidget';
+// import DifferentialsContainer from '../components/Differentials/DifferentialsContainer';
 
 const API_ENDPOINT = 'https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/';
 
@@ -24,7 +25,7 @@ export async function getStaticProps() {
     props: {
       fplData,
     },
-    revalidate: 3600, // 1 hour
+    revalidate: 30, // 3600, // 1 hour
   };
 }
 
@@ -37,8 +38,11 @@ export default function Home({ fplData }) {
       </Head>
       <CssVarsProvider>
         <ContainerStyled>
+          <h1>{fplData.league_name}</h1>
           <GameweekSummary mvp={fplData.mvp} woodenSpoon={fplData.shitebag} />
-          <CaptaincyWidget players={fplData.captaincy} />
+          { /* Turning off captaincy widget as its not functioning properly */}
+          {/* <CaptaincyWidget players={fplData.captaincy} /> */}
+          {/* <DifferentialsContainer /> */}
         </ContainerStyled>
       </CssVarsProvider>
     </div>
