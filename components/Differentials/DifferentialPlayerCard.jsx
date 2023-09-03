@@ -12,7 +12,7 @@ function DifferentialPlayerCard({ player, ownedBy }) {
   return (
     <>
       <PlayerCard
-        player_name={player.player_name}
+        player_name={player.name}
         points={player.points}
         photo_url={player.photo_url}
       />
