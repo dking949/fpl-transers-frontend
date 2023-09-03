@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import AspectRatio from '@mui/joy/AspectRatio';
-import Image from 'next/image';
 import { CardStyled, UnorderedListStyled } from './styled';
+import PlayerCard from '../PlayerCard/PlayerCard';
 
 function CaptaincyRow({
   playerName,
   photoUrl,
   captainedBy,
-  /* captainedByPercent */
+  points,
   fixture,
 }) {
   const captainedByList = useState(
@@ -15,25 +14,25 @@ function CaptaincyRow({
     captainedBy.map((contestant) => <li>{contestant.name}</li>),
   );
 
+  const playerPoints = points ?? 0;
+
   return (
     <CardStyled>
-      <AspectRatio ratio={1} objectFit="cover">
-        <Image
-          src={photoUrl}
-          width={80}
-          height={120}
-          alt="Player Pic"
-        />
-      </AspectRatio>
-      <div>{playerName}</div>
-      <UnorderedListStyled>
-        {captainedByList}
-      </UnorderedListStyled>
-      {/* <div>
-        {captainedByPercent}
-        %
-      </div> */}
+      <PlayerCard
+        player_name={playerName}
+        points={playerPoints}
+        photo_url={photoUrl}
+      />
       <div>
+        Captained By
+        <UnorderedListStyled>
+          {captainedByList}
+        </UnorderedListStyled>
+      </div>
+
+      <div>
+        Fixture:
+        {' '}
         {fixture}
       </div>
     </CardStyled>

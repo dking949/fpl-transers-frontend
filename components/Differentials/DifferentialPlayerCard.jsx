@@ -1,31 +1,23 @@
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import PlayerCard from '../PlayerCard/PlayerCard';
-// import { Player, Contestant } from '../../types';
+import { Player, Contestant } from '../../types';
 
-function DifferentialPlayerCard() {
-  // const mappedOwnedByList = ownedBy.map((contestant) => <li>{contestant.name}</li>);
-
-  /*
-player.player_name
-player.points
-player.photo_url
-*/
+function DifferentialPlayerCard({ player, ownedBy }) {
+  const mappedOwnedByList = ownedBy.map((contestant) => <li>{contestant.name}</li>);
 
   return (
     <>
       <PlayerCard
-        player_name="Kane"
-        points={10}
-        photo_url="https:resources.premierleague.com/premierleague/photos/players/110x140/p78830.png"
+        player_name={player.player_name}
+        points={player.points}
+        photo_url={player.photo_url}
       />
       <div>
         Owned By
         <ul>
-          {/* {mappedOwnedByList} */}
-          <li>Darren</li>
-          <li>Peter</li>
+          {mappedOwnedByList}
         </ul>
       </div>
     </>
@@ -33,9 +25,9 @@ player.photo_url
   );
 }
 
-// DifferentialPlayerCard.propTypes = {
-//   player: Player.isRequired,
-//   ownedBy: PropTypes.arrayOf(Contestant).isRequired,
-// };
+DifferentialPlayerCard.propTypes = {
+  player: Player.isRequired,
+  ownedBy: PropTypes.arrayOf(Contestant).isRequired,
+};
 
 export default DifferentialPlayerCard;

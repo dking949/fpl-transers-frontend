@@ -10,7 +10,7 @@ function CaptaincyWidget({ players }) {
       playerName={plyr.name}
       photoUrl={plyr.photo_url}
       captainedBy={plyr.captainedBy}
-      // captainedByPercent={plyr.captainedByPercent}
+      points={plyr.points}
       fixture={plyr.fixture}
     />
   ))]);

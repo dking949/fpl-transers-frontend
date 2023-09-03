@@ -3,8 +3,8 @@ import { CssVarsProvider } from '@mui/joy/styles';
 import Head from 'next/head';
 import styled from 'styled-components';
 import GameweekSummary from '../components/GameweekSummary/GameweekSummary';
-// import CaptaincyWidget from '../components/CaptaincyWidget/CaptaincyWidget';
-// import DifferentialsContainer from '../components/Differentials/DifferentialsContainer';
+import CaptaincyWidget from '../components/CaptaincyWidget/CaptaincyWidget';
+import DifferentialsContainer from '../components/Differentials/DifferentialsContainer';
 
 const API_ENDPOINT = 'https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/';
 
@@ -30,6 +30,8 @@ export async function getStaticProps() {
 }
 
 export default function Home({ fplData }) {
+  const { transfers, captain, differentials } = fplData;
+
   return (
     <div>
       <Head>
@@ -38,11 +40,11 @@ export default function Home({ fplData }) {
       </Head>
       <CssVarsProvider>
         <ContainerStyled>
-          <h1>{fplData.league_name}</h1>
-          <GameweekSummary mvp={fplData.mvp} woodenSpoon={fplData.shitebag} />
+          <h1>{transfers.league_name}</h1>
+          <GameweekSummary mvp={transfers.mvp} woodenSpoon={transfers.shitebag} />
           { /* Turning off captaincy widget as its not functioning properly */}
-          {/* <CaptaincyWidget players={fplData.captaincy} /> */}
-          {/* <DifferentialsContainer /> */}
+          <CaptaincyWidget players={captain} />
+          <DifferentialsContainer differentials={differentials} />
         </ContainerStyled>
       </CssVarsProvider>
     </div>
