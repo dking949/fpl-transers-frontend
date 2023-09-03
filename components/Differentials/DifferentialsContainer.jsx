@@ -28,7 +28,11 @@ const DIFFERENTIAL_DEFINITION = (
 
 function DifferentialsContainer({ differentials }) {
   const renderDifferentials = () => differentials.map((differential) => (
-    <DifferentialPlayerCard player={differential} ownedBy={differential.ownedBy} />
+    <DifferentialPlayerCard
+      key={differential.id}
+      player={differential}
+      ownedBy={differential.ownedBy}
+    />
   ));
 
   return (

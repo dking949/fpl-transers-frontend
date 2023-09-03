@@ -5,8 +5,8 @@ import { ContainerStyled, CardStyled } from './styled';
 
 function CaptaincyWidget({ players }) {
   const captainedPlayers = useState([players.map((plyr) => (
-    // eslint-disable-next-line react/jsx-key
     <CaptaincyRow
+      key={plyr.id}
       playerName={plyr.name}
       photoUrl={plyr.photo_url}
       captainedBy={plyr.captainedBy}

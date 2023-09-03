@@ -5,7 +5,9 @@ import PlayerCard from '../PlayerCard/PlayerCard';
 import { Player, Contestant } from '../../types';
 
 function DifferentialPlayerCard({ player, ownedBy }) {
-  const mappedOwnedByList = ownedBy.map((contestant) => <li>{contestant.name}</li>);
+  const mappedOwnedByList = ownedBy.map(
+    (contestant) => <li key={contestant.id}>{contestant.name}</li>,
+  );
 
   return (
     <>
