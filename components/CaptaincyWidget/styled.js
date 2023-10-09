@@ -10,8 +10,5 @@ export const ContainerStyled = styled.div`
 
 export const CardStyled = styled(Card)`
   align-items: center;
-  min-width: '350px';
-  height: 'fit-content';
-  max-width: 'fit-content';
-  margin: 'auto';
+  height: fit-content;
 `;

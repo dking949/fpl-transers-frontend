@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Card from '@mui/joy/Card';
 import { BsInfoCircle } from 'react-icons/bs';
 import Tooltip from '@mui/joy/Tooltip';
 import IconButton from '@mui/joy/IconButton';
 import DifferentialPlayerCard from './DifferentialPlayerCard';
-import TitleContainerStyled from './styled';
+import { TitleContainerStyled, DifferentialListStyled } from './styled';
 
 const DIFFERENTIAL_DEFINITION = (
   <div>
@@ -27,13 +27,19 @@ const DIFFERENTIAL_DEFINITION = (
 );
 
 function DifferentialsContainer({ differentials }) {
-  const renderDifferentials = () => differentials.map((differential) => (
-    <DifferentialPlayerCard
-      key={differential.id}
-      player={differential}
-      ownedBy={differential.ownedBy}
-    />
-  ));
+  const mappedDifferentials = useCallback(
+    () => differentials.map((differential) => (
+      <li key={differential.id}>
+        <DifferentialPlayerCard
+          key={differential.id}
+          player={differential}
+          ownedBy={differential.ownedBy}
+        />
+      </li>
+
+    )),
+    [differentials],
+  );
 
   return (
     <div>
@@ -44,11 +50,11 @@ function DifferentialsContainer({ differentials }) {
         }}
       >
         <TitleContainerStyled>
-          <h2>
+          <h1>
             Differentials
-          </h2>
+          </h1>
           <div style={{ display: 'flex' }}>
-            <Tooltip title={DIFFERENTIAL_DEFINITION} variant="solid" placement="right">
+            <Tooltip title={DIFFERENTIAL_DEFINITION} variant="solid" placement="top" leaveTouchDelay={5000}>
               <IconButton>
                 <BsInfoCircle />
               </IconButton>
@@ -57,9 +63,9 @@ function DifferentialsContainer({ differentials }) {
 
           </div>
         </TitleContainerStyled>
-        <div>
-          { renderDifferentials() }
-        </div>
+        <DifferentialListStyled>
+          { mappedDifferentials() }
+        </DifferentialListStyled>
       </Card>
     </div>
   );

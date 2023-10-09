@@ -8,14 +8,19 @@ import DifferentialsContainer from '../components/Differentials/DifferentialsCon
 
 const API_ENDPOINT = 'https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/';
 
-const ContainerStyled = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 50px;
-    gap: 5em;
-    max-width: 100vw;
-  `;
+const WidgetContainerStyled = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px;
+  gap: 5em;
+  max-width: 100vw;
+`;
+
+const TitleStyled = styled.h1`
+  display: flex;
+  justify-content: center;
+`;
 
 export async function getStaticProps() {
   const data = await fetch(API_ENDPOINT);
@@ -39,13 +44,13 @@ export default function Home({ fplData }) {
         <meta name="fpl transfers" content="initial-scale=1.0, width=device-width" />
       </Head>
       <CssVarsProvider>
-        <ContainerStyled>
-          <h1>{transfers.league_name}</h1>
+        <TitleStyled>{transfers.league_name}</TitleStyled>
+        <WidgetContainerStyled>
           <GameweekSummary mvp={transfers.mvp} woodenSpoon={transfers.shitebag} />
           { /* Turning off captaincy widget as its not functioning properly */}
           <CaptaincyWidget players={captain} />
           <DifferentialsContainer differentials={differentials} />
-        </ContainerStyled>
+        </WidgetContainerStyled>
       </CssVarsProvider>
     </div>
   );
