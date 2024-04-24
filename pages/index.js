@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-filename-extension */
-import { CssVarsProvider } from '@mui/joy/styles';
-import Head from 'next/head';
-import styled from 'styled-components';
-import GameweekSummary from '../components/GameweekSummary/GameweekSummary';
-import CaptaincyWidget from '../components/CaptaincyWidget/CaptaincyWidget';
-import DifferentialsContainer from '../components/Differentials/DifferentialsContainer';
+import { CssVarsProvider } from "@mui/joy/styles";
+import Head from "next/head";
+import styled from "styled-components";
+import GameweekSummary from "../components/GameweekSummary/GameweekSummary";
+import CaptaincyWidget from "../components/CaptaincyWidget/CaptaincyWidget";
+import DifferentialsContainer from "../components/Differentials/DifferentialsContainer";
 
-const API_ENDPOINT = 'https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/';
+const API_ENDPOINT = "https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/";
 
 const WidgetContainerStyled = styled.div`
   display: flex;
@@ -41,13 +41,24 @@ export default function Home({ fplData }) {
     <div>
       <Head>
         <title>FPL Transfers</title>
-        <meta name="fpl transfers" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="fpl transfers"
+          content="initial-scale=1.0, width=device-width"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <CssVarsProvider>
         <TitleStyled>{transfers.league_name}</TitleStyled>
         <WidgetContainerStyled>
-          <GameweekSummary mvp={transfers.mvp} woodenSpoon={transfers.shitebag} />
-          { /* Turning off captaincy widget as its not functioning properly */}
+          <GameweekSummary
+            mvp={transfers.mvp}
+            woodenSpoon={transfers.shitebag}
+          />
           <CaptaincyWidget players={captain} />
           <DifferentialsContainer differentials={differentials} />
         </WidgetContainerStyled>
