@@ -5,7 +5,8 @@ import GameweekSummary from "../../components/GameweekSummary/GameweekSummary";
 import CaptaincyWidget from "../../components/CaptaincyWidget/CaptaincyWidget";
 import DifferentialsContainer from "../../components/Differentials/DifferentialsContainer";
 
-const API_ENDPOINT = "https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/";
+const API_ENDPOINT =
+  "https://tzmjbc96de.execute-api.us-east-1.amazonaws.com?league_id=1267504";
 
 const WidgetContainerStyled = styled.div`
   display: flex;
