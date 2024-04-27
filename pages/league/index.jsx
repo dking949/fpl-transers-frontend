@@ -1,10 +1,9 @@
-/* eslint-disable react/jsx-filename-extension */
 import { CssVarsProvider } from "@mui/joy/styles";
 import Head from "next/head";
 import styled from "styled-components";
-import GameweekSummary from "../components/GameweekSummary/GameweekSummary";
-import CaptaincyWidget from "../components/CaptaincyWidget/CaptaincyWidget";
-import DifferentialsContainer from "../components/Differentials/DifferentialsContainer";
+import GameweekSummary from "../../components/GameweekSummary/GameweekSummary";
+import CaptaincyWidget from "../../components/CaptaincyWidget/CaptaincyWidget";
+import DifferentialsContainer from "../../components/Differentials/DifferentialsContainer";
 
 const API_ENDPOINT = "https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/";
 
@@ -23,6 +22,7 @@ const TitleStyled = styled.h1`
 `;
 
 export async function getStaticProps() {
+  // TODO: Use AJax or GraphQL to pass league ID
   const data = await fetch(API_ENDPOINT);
   const fplData = await data.json();
 
@@ -34,7 +34,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ fplData }) {
+export default function League({ fplData }) {
   const { transfers, captain, differentials } = fplData;
 
   return (
@@ -45,12 +45,6 @@ export default function Home({ fplData }) {
           name="fpl transfers"
           content="initial-scale=1.0, width=device-width"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
       <CssVarsProvider>
         <TitleStyled>{transfers.league_name}</TitleStyled>

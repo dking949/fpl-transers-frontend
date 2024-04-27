@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import Image from 'next/image';
-import Card from '@mui/joy/Card';
+import styled from "styled-components";
+import Image from "next/image";
+import Card from "@mui/joy/Card";
 
 export const CardStyled = styled(Card)`
   display: grid;
@@ -21,5 +21,5 @@ export const UnorderedListStyled = styled.ul`
 `;
 
 export const PlayerImageStyled = styled(Image)`
-  border-radius: 50%
+  border-radius: 50%;
 `;

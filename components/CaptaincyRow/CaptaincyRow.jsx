@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
-import { CardStyled, UnorderedListStyled } from './styled';
-import PlayerCard from '../PlayerCard/PlayerCard';
+import React, { useState } from "react";
+import { CardStyled, UnorderedListStyled } from "./styled";
+import PlayerCard from "../PlayerCard/PlayerCard";
 
-function CaptaincyRow({
-  playerName,
-  photoUrl,
-  captainedBy,
-  points,
-  fixture,
-}) {
+function CaptaincyRow({ playerName, photoUrl, captainedBy, points, fixture }) {
   const captainedByList = useState(
-    // eslint-disable-next-line react/jsx-key
     captainedBy.map((contestant) => <li>{contestant.name}</li>),
   );
 
@@ -25,16 +18,10 @@ function CaptaincyRow({
       />
       <div>
         Captained By
-        <UnorderedListStyled>
-          {captainedByList}
-        </UnorderedListStyled>
+        <UnorderedListStyled>{captainedByList}</UnorderedListStyled>
       </div>
 
-      <div>
-        Fixture:
-        {' '}
-        {fixture}
-      </div>
+      <div>Fixture: {fixture}</div>
     </CardStyled>
   );
 }

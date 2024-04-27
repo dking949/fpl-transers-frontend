@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ContainerStyled = styled.div`
   display: flex;
@@ -7,7 +7,7 @@ export const ContainerStyled = styled.div`
 `;
 
 export const TransferListStyled = styled.ul`
-  list-style-type:none;
+  list-style-type: none;
   display: inline-block;
   text-align: left;
   padding-left: 0px;

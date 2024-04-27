@@ -1,13 +1,13 @@
 /* eslint-disable import/prefer-default-export */
-import React from 'react';
-import PropTypes from 'prop-types';
-import PlayerCard from '../PlayerCard/PlayerCard';
-import { Player, Contestant } from '../../types';
+import React from "react";
+import PropTypes from "prop-types";
+import PlayerCard from "../PlayerCard/PlayerCard";
+import { Player, Contestant } from "../../types";
 
 function DifferentialPlayerCard({ player, ownedBy }) {
-  const mappedOwnedByList = ownedBy.map(
-    (contestant) => <li key={contestant.id}>{contestant.name}</li>,
-  );
+  const mappedOwnedByList = ownedBy.map((contestant) => (
+    <li key={contestant.id}>{contestant.name}</li>
+  ));
 
   return (
     <>
@@ -18,12 +18,9 @@ function DifferentialPlayerCard({ player, ownedBy }) {
       />
       <div>
         Owned By
-        <ul>
-          {mappedOwnedByList}
-        </ul>
+        <ul>{mappedOwnedByList}</ul>
       </div>
     </>
-
   );
 }
 

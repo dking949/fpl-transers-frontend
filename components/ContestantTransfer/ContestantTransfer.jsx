@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { FaArrowRight, FaArrowDown } from 'react-icons/fa';
-import PlayerCard from '../PlayerCard/PlayerCard';
-import ContainerStyled from './styled';
-import { Transfer } from '../../types';
+import React, { useState, useEffect } from "react";
+import { FaArrowRight, FaArrowDown } from "react-icons/fa";
+import PlayerCard from "../PlayerCard/PlayerCard";
+import ContainerStyled from "./styled";
+import { Transfer } from "../../types";
 
-function ContestantTransfer({
-  playerOut,
-  playerIn,
-}) {
+function ContestantTransfer({ playerOut, playerIn }) {
   const [arrow, setArrow] = useState(null);
 
   const getArrowIcon = () => {

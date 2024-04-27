@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Card from '@mui/joy/Card';
+import styled from "styled-components";
+import Card from "@mui/joy/Card";
 
 export const ContainerStyled = styled.div`
   display: flex;

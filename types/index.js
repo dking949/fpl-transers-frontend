@@ -1,6 +1,4 @@
-import {
-  shape, number, string, bool, arrayOf,
-} from 'prop-types';
+import { shape, number, string, bool, arrayOf } from "prop-types";
 
 export const Player = shape({
   name: string.isRequired,
