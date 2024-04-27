@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { CssVarsProvider } from "@mui/joy/styles";
-import { Button, Input } from "@mui/joy";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
@@ -8,6 +7,8 @@ import {
   FormStyled,
   InputContainerStyled,
   HyperlinkStyled,
+  LeagueInputStyled,
+  LeagueInputSearchButtonStyled,
 } from "../styles/pageStyles/landingPage/styled";
 
 export default function Search() {
@@ -32,14 +33,16 @@ export default function Search() {
         <ContentContainerStyled>
           <InputContainerStyled>
             <FormStyled onSubmit={onSubmitHandler}>
-              <Input
+              <LeagueInputStyled
                 size="lg"
                 placeholder="Search League ID"
                 required
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
               />
-              <Button type="submit">Submit</Button>
+              <LeagueInputSearchButtonStyled type="submit">
+                Submit
+              </LeagueInputSearchButtonStyled>
             </FormStyled>
           </InputContainerStyled>
           <HyperlinkStyled href="/league">
