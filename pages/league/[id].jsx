@@ -2,10 +2,10 @@ import { CssVarsProvider } from "@mui/joy/styles";
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 import GameweekSummary from "../../components/GameweekSummary/GameweekSummary";
 import CaptaincyWidget from "../../components/CaptaincyWidget/CaptaincyWidget";
 import DifferentialsContainer from "../../components/Differentials/DifferentialsContainer";
-import { useRouter } from "next/router";
 
 const API_ENDPOINT = "https://tzmjbc96de.execute-api.us-east-1.amazonaws.com/";
 
@@ -23,32 +23,21 @@ const TitleStyled = styled.h1`
   justify-content: center;
 `;
 
-// export async function getStaticPaths() {
-//   return {
-//     paths: [
-//       // String variant:
-//       "/league/id",
-//       // Object variant:
-//       { params: { id: "id" } }, // TODO: Is this correct?
-//     ],
-//     fallback: true,
-//   };
-// }
-
 export default function League() {
   const [loading, setLoading] = useState(true);
-  const [transfers, setTransfers] = useState({});
-  const [captain, setCaptain] = useState({});
-  const [differentials, setDifferentials] = useState({});
+  const [transfers, setTransfers] = useState(null);
+  const [captain, setCaptain] = useState(null);
+  const [differentials, setDifferentials] = useState(null);
 
   const router = useRouter();
 
   const fetchFplData = async () => {
     // TODO: Use AJax or GraphQL to pass league ID
     // TODO: Fix CORS
-    const fplData = await fetch(API_ENDPOINT);
+    let fplData = await fetch(`${API_ENDPOINT}?league_id=${router.query.id}`);
 
     if (fplData.ok) {
+      fplData = await fplData.json();
       setTransfers(fplData.transfers);
       setCaptain(fplData.captain);
       setDifferentials(fplData.differentials);
@@ -57,8 +46,10 @@ export default function League() {
   };
 
   useEffect(() => {
-    fetchFplData();
-  }, []);
+    if (router.isReady) {
+      fetchFplData();
+    }
+  }, [router.isReady]);
 
   return (
     <div>
@@ -68,25 +59,19 @@ export default function League() {
           name="fpl transfers"
           content="initial-scale=1.0, width=device-width"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
       <CssVarsProvider>
-        <TitleStyled>{router.query.id}</TitleStyled>
-        {!loading && (
-          <WidgetContainerStyled>
-            <GameweekSummary
-              mvp={transfers.mvp}
-              woodenSpoon={transfers.shitebag}
-            />
-            <CaptaincyWidget players={captain} />
-            <DifferentialsContainer differentials={differentials} />
-          </WidgetContainerStyled>
-        )}
+        {!loading &&
+          (<TitleStyled>{transfers.league_name}</TitleStyled>)(
+            <WidgetContainerStyled>
+              <GameweekSummary
+                mvp={transfers.mvp}
+                woodenSpoon={transfers.shitebag}
+              />
+              <CaptaincyWidget players={captain} />
+              <DifferentialsContainer differentials={differentials} />
+            </WidgetContainerStyled>,
+          )}
       </CssVarsProvider>
     </div>
   );
