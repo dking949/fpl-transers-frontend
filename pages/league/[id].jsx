@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { CircularProgress } from "@mui/joy";
-import { ContainerStyled } from "./styled";
+import ContainerStyled from "../../styles/pageStyles/league/styled";
 import GameweekSummary from "../../components/GameweekSummary/GameweekSummary";
 import CaptaincyWidget from "../../components/CaptaincyWidget/CaptaincyWidget";
 import DifferentialsContainer from "../../components/Differentials/DifferentialsContainer";
@@ -50,7 +50,7 @@ export default function League() {
   useEffect(() => {
     if (router.isReady) {
       fetchFplData();
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
 
   return (
