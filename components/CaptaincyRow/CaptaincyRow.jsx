@@ -4,7 +4,9 @@ import PlayerCard from "../PlayerCard/PlayerCard";
 
 function CaptaincyRow({ playerName, photoUrl, captainedBy, points, fixture }) {
   const captainedByList = useState(
-    captainedBy.map((contestant) => <li>{contestant.name}</li>),
+    captainedBy.map((contestant) => (
+      <li key={contestant.id}>{contestant.name}</li>
+    )),
   );
 
   const playerPoints = points ?? 0;
