@@ -8,6 +8,17 @@ export const InputContainerStyled = styled.div`
 
 export const FormStyled = styled.form`
   display: inline-flex;
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 `;
 
 export const ContentContainerStyled = styled.div`
@@ -34,4 +45,8 @@ export const LeagueInputStyled = styled(Input)`
 export const LeagueInputSearchButtonStyled = styled(Button)`
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+`;
+
+export const CircularProgressContainerStyled = styled.div`
+  height: 50px;
 `;

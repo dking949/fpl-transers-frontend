@@ -3,6 +3,8 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import { CircularProgress } from "@mui/joy";
+import { ContainerStyled } from "./styled";
 import GameweekSummary from "../../components/GameweekSummary/GameweekSummary";
 import CaptaincyWidget from "../../components/CaptaincyWidget/CaptaincyWidget";
 import DifferentialsContainer from "../../components/Differentials/DifferentialsContainer";
@@ -61,17 +63,22 @@ export default function League() {
         />
       </Head>
       <CssVarsProvider>
-        {!loading &&
-          (<TitleStyled>{transfers.league_name}</TitleStyled>)(
-            <WidgetContainerStyled>
-              <GameweekSummary
-                mvp={transfers.mvp}
-                woodenSpoon={transfers.shitebag}
-              />
-              <CaptaincyWidget players={captain} />
-              <DifferentialsContainer differentials={differentials} />
-            </WidgetContainerStyled>,
+        <ContainerStyled>
+          {!loading && (
+            <>
+              <TitleStyled>{transfers.league_name}</TitleStyled>
+              <WidgetContainerStyled>
+                <GameweekSummary
+                  mvp={transfers.mvp}
+                  woodenSpoon={transfers.shitebag}
+                />
+                <CaptaincyWidget players={captain} />
+                <DifferentialsContainer differentials={differentials} />
+              </WidgetContainerStyled>
+            </>
           )}
+          {loading && <CircularProgress size="lg" />}
+        </ContainerStyled>
       </CssVarsProvider>
     </div>
   );

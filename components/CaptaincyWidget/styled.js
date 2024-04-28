@@ -11,4 +11,8 @@ export const ContainerStyled = styled.div`
 export const CardStyled = styled(Card)`
   align-items: center;
   height: fit-content;
+
+  @media (min-width: 1250px) {
+    width: 50vw;
+  }
 `;
