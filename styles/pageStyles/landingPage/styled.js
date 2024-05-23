@@ -33,7 +33,7 @@ export const ContentContainerStyled = styled.div`
 
 export const HyperlinkStyled = styled(Link)`
   text-decoration: underline;
-  color: #963cff;
+  color: white;
 `;
 
 export const LeagueInputStyled = styled(Input)`

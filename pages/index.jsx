@@ -25,7 +25,7 @@ export default function Search() {
   };
 
   return (
-    <div>
+    <div className="content">
       <Head>
         <title>FPL Transfers</title>
         <meta
