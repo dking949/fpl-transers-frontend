@@ -25,39 +25,41 @@ export default function Search() {
   };
 
   return (
-    <div className="content">
-      <Head>
-        <title>FPL Transfers</title>
-        <meta
-          name="fpl transfers"
-          content="initial-scale=1.0, width=device-width"
-        />
-      </Head>
-      <CssVarsProvider>
-        <ContentContainerStyled>
-          <InputContainerStyled>
-            <FormStyled onSubmit={onSubmitHandler}>
-              <LeagueInputStyled
-                size="lg"
-                placeholder="Search League ID"
-                required
-                value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
-                type="number"
-              />
-              <LeagueInputSearchButtonStyled type="submit">
-                Submit
-              </LeagueInputSearchButtonStyled>
-            </FormStyled>
-          </InputContainerStyled>
-          <HyperlinkStyled href="/league">
-            See an example from my FPL league
-          </HyperlinkStyled>
-          <CircularProgressContainerStyled>
-            {loading && <CircularProgress />}
-          </CircularProgressContainerStyled>
-        </ContentContainerStyled>
-      </CssVarsProvider>
+    <div className="background">
+      <div className="content">
+        <Head>
+          <title>FPL Transfers</title>
+          <meta
+            name="fpl transfers"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
+        <CssVarsProvider>
+          <ContentContainerStyled>
+            <InputContainerStyled>
+              <FormStyled onSubmit={onSubmitHandler}>
+                <LeagueInputStyled
+                  size="lg"
+                  placeholder="Search League ID"
+                  required
+                  value={inputText}
+                  onChange={(e) => setInputText(e.target.value)}
+                  type="number"
+                />
+                <LeagueInputSearchButtonStyled type="submit">
+                  Submit
+                </LeagueInputSearchButtonStyled>
+              </FormStyled>
+            </InputContainerStyled>
+            <HyperlinkStyled href="/league">
+              See an example from my FPL league
+            </HyperlinkStyled>
+            <CircularProgressContainerStyled>
+              {loading && <CircularProgress />}
+            </CircularProgressContainerStyled>
+          </ContentContainerStyled>
+        </CssVarsProvider>
+      </div>
     </div>
   );
 }
