@@ -8,4 +8,7 @@ export const TitleContainerStyled = styled.div`
 export const DifferentialListStyled = styled.ul`
   list-style: none;
   padding: 0px;
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
 `;
