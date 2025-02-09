@@ -6,7 +6,7 @@ function Hero() {
       <HeroTitle>Are you as good of an FPL manager as your mates?</HeroTitle>
       <HeroDescription>
         FPL Transfers compares your gameweek performance to your mates&apos; to
-        who makes the better transfers.
+        see who makes the better transfers.
       </HeroDescription>
     </HeroSection>
   );
