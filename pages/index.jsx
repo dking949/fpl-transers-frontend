@@ -12,6 +12,8 @@ import {
   LeagueInputSearchButtonStyled,
   CircularProgressContainerStyled,
 } from "../styles/pageStyles/landingPage/styled";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
 
 export default function Search() {
   const router = useRouter();
@@ -36,11 +38,13 @@ export default function Search() {
         </Head>
         <CssVarsProvider>
           <ContentContainerStyled>
+            <Navbar />
+            <Hero />
             <InputContainerStyled>
               <FormStyled onSubmit={onSubmitHandler}>
                 <LeagueInputStyled
                   size="lg"
-                  placeholder="Search League ID"
+                  placeholder="Search FPL League ID"
                   required
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
@@ -50,10 +54,10 @@ export default function Search() {
                   Submit
                 </LeagueInputSearchButtonStyled>
               </FormStyled>
+              <HyperlinkStyled href="/league">
+                See an example from my FPL league
+              </HyperlinkStyled>
             </InputContainerStyled>
-            <HyperlinkStyled href="/league">
-              See an example from my FPL league
-            </HyperlinkStyled>
             <CircularProgressContainerStyled>
               {loading && <CircularProgress />}
             </CircularProgressContainerStyled>

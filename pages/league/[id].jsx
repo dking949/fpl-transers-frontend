@@ -23,6 +23,8 @@ const WidgetContainerStyled = styled.div`
 const TitleStyled = styled.h1`
   display: flex;
   justify-content: center;
+  text-align: center;
+  color: white;
 `;
 
 export default function League() {

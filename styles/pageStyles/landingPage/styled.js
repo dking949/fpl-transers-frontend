@@ -4,6 +4,9 @@ import { Button, Input } from "@mui/joy";
 
 export const InputContainerStyled = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  text-align: center;
 `;
 
 export const FormStyled = styled.form`
