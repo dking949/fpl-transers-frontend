@@ -36,8 +36,6 @@ export default function League() {
   const router = useRouter();
 
   const fetchFplData = async () => {
-    // TODO: Use AJax or GraphQL to pass league ID
-    // TODO: Fix CORS
     let fplData = await fetch(`${API_ENDPOINT}?league_id=${router.query.id}`);
 
     if (fplData.ok) {

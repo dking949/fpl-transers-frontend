@@ -3,7 +3,7 @@ import Card from "@mui/joy/Card";
 
 export const ContainerStyled = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1em;
   width: 100%;
 `;
@@ -11,8 +11,5 @@ export const ContainerStyled = styled.div`
 export const CardStyled = styled(Card)`
   align-items: center;
   height: fit-content;
-
-  @media (min-width: 1250px) {
-    width: 50vw;
-  }
+  max-width: 90%;
 `;

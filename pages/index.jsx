@@ -12,7 +12,6 @@ import {
   LeagueInputSearchButtonStyled,
   CircularProgressContainerStyled,
 } from "../styles/pageStyles/landingPage/styled";
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 
 export default function Search() {
@@ -38,7 +37,6 @@ export default function Search() {
         </Head>
         <CssVarsProvider>
           <ContentContainerStyled>
-            <Navbar />
             <Hero />
             <InputContainerStyled>
               <FormStyled onSubmit={onSubmitHandler}>

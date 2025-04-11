@@ -40,14 +40,14 @@ export const HyperlinkStyled = styled(Link)`
 `;
 
 export const LeagueInputStyled = styled(Input)`
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border: 1px solid #0b6bcb;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border: 1px solid #0b6bcb !important;
 `;
 
 export const LeagueInputSearchButtonStyled = styled(Button)`
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
 `;
 
 export const CircularProgressContainerStyled = styled.div`

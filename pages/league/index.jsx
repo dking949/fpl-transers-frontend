@@ -48,15 +48,17 @@ export default function League({ fplData }) {
         />
       </Head>
       <CssVarsProvider>
-        <TitleStyled>{transfers.league_name}</TitleStyled>
-        <WidgetContainerStyled>
-          <GameweekSummary
-            mvp={transfers.mvp}
-            woodenSpoon={transfers.shitebag}
-          />
-          <CaptaincyWidget players={captain} />
-          <DifferentialsContainer differentials={differentials} />
-        </WidgetContainerStyled>
+        <div style={{ position: "relative", top: "80px" }}>
+          <TitleStyled>{transfers.league_name}</TitleStyled>
+          <WidgetContainerStyled>
+            <GameweekSummary
+              mvp={transfers.mvp}
+              woodenSpoon={transfers.shitebag}
+            />
+            <CaptaincyWidget players={captain} />
+            <DifferentialsContainer differentials={differentials} />
+          </WidgetContainerStyled>
+        </div>
       </CssVarsProvider>
     </div>
   );
